@@ -63,8 +63,8 @@ export default function Home() {
               <div className="flex flex-col md:flex-row gap-8 ">
                 <div className="flex-1">
                   <p className="mb-4">
-                    Hi! I'm Charles, a Junior studying Computer Science at Cornell
-                    University. I'm currently really excited about Computer Systems and
+                    Hi! I&apos;m Charles, a Junior studying Computer Science at Cornell
+                    University. I&apos;m currently really excited about Computer Systems and
                     Human-Computer-Interaction. On campus, I build apps for students
                     through <Link href="https://www.cornellappdev.com/" target="_blank" className="underline">Cornell AppDev</Link>.
                   </p>
@@ -159,7 +159,7 @@ export default function Home() {
                   </div>
                   <ul className="list-disc pl-5 text-gray-700 mt-2">
                     <li>Collaborating with Product Designers as well as iOS, Backend, and Android developers to enhance and improve the experience of Cornellians and Ithacans alike, with a combined user base of 16,000+ Monthly Active Users.</li>
-                    <li>Frequently merging pull requests across multiple iOS applications with 1000's of lines of code.</li>
+                    <li>Frequently merging pull requests across multiple iOS applications with 1000&apos;s of lines of code.</li>
                     <li>Educating other students, members, and full-time engineers on building iOS apps in SwiftUI and UIKit</li>
                   </ul>
                 </div>
