@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
-import { ThemeContext } from "./layout";
+import ThemeContext from "./ThemeContext";
 import aquarium from "./aquarium.jpeg";
 import google from "./google.png";
 import appdev from "./appdev.png";

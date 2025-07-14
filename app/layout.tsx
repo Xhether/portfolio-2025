@@ -1,19 +1,9 @@
 "use client";
 
 import { Geist, Geist_Mono } from "next/font/google";
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import ThemeContext from "./ThemeContext";
 import "./globals.css";
-
-// Create a context to provide theme information throughout the app
-type ThemeContextType = {
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
-};
-
-export const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
-  toggleTheme: () => {},
-});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
