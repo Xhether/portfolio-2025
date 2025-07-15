@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { useEffect, useState } from "react";
 import ThemeContext from "./ThemeContext";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,6 +61,7 @@ export default function RootLayout({
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
           {children}
         </ThemeContext.Provider>
+        <Analytics />
       </body>
     </html>
   );

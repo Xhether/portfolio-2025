@@ -198,8 +198,8 @@ export default function Home() {
                     <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded">Firebase</span>
                   </div>
                  <ul className="list-disc pl-5 text-gray-700 dark:text-gray-400 mt-2">
-                    <li>Implemented Balance Sheet View, allowing users to see relevant metrics related to their spending history</li>
-                    <li>Created Marketplace view for users to filter and search for player cards based on their needs.</li>
+                    <li>Implemented Smart Homepage, enabling users to quickly filter through listings via category, price, and recommendations</li>
+                    <li>Linked backend endpoints to frontend with Alamofire and created a custom range slider for price filtering</li>
                   </ul> 
                   </div>
                   <div className="shrink-0 w-64 h-64 flex items-center pt-1">
