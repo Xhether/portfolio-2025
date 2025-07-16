@@ -11,6 +11,7 @@ import allin from "./allin.jpeg";
 import eatery from "./eateryhome.png";
 import resell from "./resell.png";
 import ecolens from "./ecolensTraining.png";
+import robot from "./robot.jpeg";
 // Theme icons
 import { SunIcon, MoonIcon } from "./icons";
 
@@ -68,6 +69,8 @@ export default function Home() {
                 <li><Link href="#projects" className="hover:text-gray-600 transition-colors">Eatery Blue</Link></li>
                 <li><Link href="#projects" className="hover:text-gray-600 transition-colors">All In</Link></li>
                 <li><Link href="#projects" className="hover:text-gray-600 transition-colors">Ecolens</Link></li>
+                <li><Link href="#projects" className="hover:text-gray-600 transition-colors">Team 399</Link></li>
+
               </ul>
             </section>
 
@@ -314,6 +317,38 @@ export default function Home() {
                     <Image
                       src={ecolens}
                       alt="Ecolens"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="border p-4 rounded-lg flex flex-row bg-white dark:bg-gray-800">
+                  <div>
+                    <div className="flex flex-row">
+                      <h3 className="text-xl font-semibold mb-2 dark:text-white">FRC Team 399</h3>
+                      <p className="text-sm font-semibold text-gray-700 mx-4 mt-1.5 dark:text-gray-400">High School</p>
+                    </div>
+                    <p className="text-gray-700 mb-3 dark:text-gray-400">Brought the robot to life</p>
+                    <div className="flex gap-2 text-sm">
+                      <span className="bg-gray-100 dark:bg-gray-200 text-gray-800 dark:text-gray-900 text-xs px-2 py-1 rounded">Java</span>
+                      <span className="bg-gray-100 dark:bg-gray-200 text-gray-800 dark:text-gray-900 text-xs px-2 py-1 rounded">Computer Vision</span>
+                      <span className="bg-gray-100 dark:bg-gray-200 text-gray-800 dark:text-gray-900 text-xs px-2 py-1 rounded">Path Detection</span>
+                      <span className="bg-gray-100 dark:bg-gray-200 text-gray-800 dark:text-gray-900 text-xs px-2 py-1 rounded">Rapid Prototyping</span>
+
+
+
+                    </div>
+                    <ul className="list-disc pl-5 text-gray-700 dark:text-gray-400 mt-2">
+                      <li>Programming subteam lead junior and senior year of highschool</li>
+                      <li>Used limelight and path planning software to develop an efficient, high scoring algorithm for the competition's autonomous period</li>
+                      <li>Helped team win engineering inspiration due to build and programming quality of robot to qualify for world championships</li>
+
+                    </ul>
+                  </div>
+
+                  <div className="shrink-0 w-64 h-64 flex items-center pt-1">
+                    <Image
+                      src={robot}
+                      alt="Robot"
                       className="w-full h-auto object-contain"
                     />
                   </div>
