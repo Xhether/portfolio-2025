@@ -24,35 +24,83 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  
-  // Effect to set the initial theme based on system preference
+  const [mounted, setMounted] = useState(false);
+
+  // Effect to set the initial theme based on stored preference or system preference
   useEffect(() => {
-    // Check if user prefers dark mode
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(prefersDark ? 'dark' : 'light');
-    
-    // Add class to document for theme
-    document.documentElement.classList.toggle('dark', prefersDark);
-    
-    // Listen for changes in system preference
+    setMounted(true);
+
+    // Check for stored theme preference first
+    const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+
+    if (storedTheme) {
+      // User has manually set a preference
+      setTheme(storedTheme);
+      if (storedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } else {
+      // Use system preference as default
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
+      if (prefersDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+
+    // Listen for changes in system preference (only if no manual preference is stored)
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
-      const newTheme = e.matches ? 'dark' : 'light';
-      setTheme(newTheme);
-      document.documentElement.classList.toggle('dark', e.matches);
+      const storedTheme = localStorage.getItem('theme');
+      if (!storedTheme) {
+        // Only update if user hasn't manually set a preference
+        const newTheme = e.matches ? 'dark' : 'light';
+        setTheme(newTheme);
+        if (e.matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
     };
-    
+
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
-  
+
   // Toggle theme function
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+
+    // Properly manage the dark class
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    // Store the user's preference
+    localStorage.setItem('theme', newTheme);
   };
-  
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-white"></div>
+          </div>
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" className={theme === 'dark' ? 'dark' : ''}>
       <body
