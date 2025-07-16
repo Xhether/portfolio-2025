@@ -339,7 +339,7 @@ export default function Home() {
                     </div>
                     <ul className="list-disc pl-5 text-gray-700 dark:text-gray-400 mt-2">
                       <li>Programming subteam lead junior and senior year of highschool</li>
-                      <li>Used limelight and path planning software to develop an efficient, high scoring algorithm for the competition's autonomous period</li>
+                      <li>Used limelight and path planning software to develop an efficient, high scoring algorithm for the competition&apos;s autonomous period</li>
                       <li>Helped team win engineering inspiration due to build and programming quality of robot to qualify for world championships</li>
 
                     </ul>
